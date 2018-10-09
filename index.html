@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pembayaran Listrik</title>
+	<link rel="stylesheet" type="text/css" href="index_sty.css">
+</head>
+<body>
+	<center><h3 style="font-size: 30px">Pembayaran Listrik</h3></center>
+	<div class="pay">
+		<form action="form.php" method="POST" name="listrik" onSubmit="validasi()">
+			<div>
+				<label>ID Pelanggan : </label>
+				<input type="text" name="serial" id="serial" />
+			</div>
+			<div>
+				<label>Nama : </label>
+				<input type="text" name="nama" id="nama" />
+			</div>
+			<div>
+				<label>Bulan : </label>
+					<select name="bulan">
+						<option value = Januari		> Januari </option>
+						<option value = Februari	> Februari </option>
+						<option value = Maret		> Maret </option>
+						<option value = April		> April </option>
+						<option value = Mei			> Mei </option>
+						<option value = Juni		> Juni </option>
+						<option value = Juli		> Juli </option>
+						<option value = Agustus		> Agustus </option>
+						<option value = September	> September </option>
+						<option value = Oktober		> Oktober </option>
+						<option value = November	> November </option>
+						<option value = Desember	> Desember </option>
+					</select>
+			</div>
+			<div>
+				<label>Daya : </label>
+					<select name="daya">
+						<option value=450>	450		</option>
+						<option value=900>	900		</option>
+						<option value=1300>	1300	</option>
+						<option value=2200>	2200	</option>
+						<option value=3500>	3500	</option>
+						<option value=6600>	6600	</option>
+					</select>
+			</div>
+			<div>
+				<label>Stand Meter Awal : </label>
+				<input type="text" name="smaw" id="smaw" />
+			</div>
+			<div>
+				<label>Stand Meter Akhir : </label>
+				<input type="text" name="smak" id="smak" />
+			</div>
+			
+			<div>
+				<input type="submit" value="Bayar" name="Bayar" class="tombol">
+			</div>
+		</form>
+	</div>
+</body>
+
+<script type="text/javascript">
+	function validasi() 
+	{
+		var serial = document.getElementById("serial").value;
+		var nama = document.getElementById("nama").value;
+		var awal = document.getElementById("smaw").value;
+		var akhir = document.getElementById("smak").value;
+		if (nama != "" && serial!="" && awal !="" && akhir !="") {
+			return true;
+		}else{
+			alert('Anda harus mengisi data dengan lengkap !');
+		}
+	}
+</script>
+
+</html>
